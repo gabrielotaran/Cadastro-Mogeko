@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Biblioteca Mogeko</title>
+    <link rel="stylesheet" th:href="@{/css/root.css}" />
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    <link rel="stylesheet" th:href="@{/css/form.css}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/personagens/list">Listar personagens</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <form
+        action="#"
+        th:action="@{/personagens/insert}"
+        method="post"
+        th:object="${personagem}"
+      >
+        <label for="txtTitle">name</label>
+        <input type="text" th:field="*{name}" required />
+        <label for="txtTitle">personality</label>
+        <input type="text" th:field="*{personality}"required />
+        <label for="txtTitle">appearance</label>
+        <input type="text" th:field="*{appearance}" required />
+        <button type="submit">Salvar</button>
+         <img src="https://i.pinimg.com/originals/5a/40/9e/5a409eeaf79b3de78a1263a7f2612857.gif"
+      </form>
+    </main>
+  </body>
+</html>

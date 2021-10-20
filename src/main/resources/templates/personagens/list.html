@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Biblioteca Mogeko</title>
+   
+    <link rel="stylesheet" th:href="@{/css/menu.css}" />
+    
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/personagens/forminsert">Cadastrar novo Personagem</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="box">
+      <table>
+        <thead>
+          <th>Nome do Personagem</th>
+         
+          
+        </thead>
+        
+        <tbody>
+         
+            <tr th:each="personagem : ${personagens}">
+            <td th:text="${personagem.name}"></td>
+            <td th:text="${personagem.personality}"></td>
+            <td ><img th:src="${personagem.appearance}" width="300"></td>
+            
+          </tr>
+            
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
